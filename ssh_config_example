@@ -1,0 +1,19 @@
+# access without password 
+Host nodes*
+  User USERNAME
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile PATH_TO_SSH_KEY
+
+# optional
+# save socket
+Host *
+  ControlPath PATH_TO_SOCKETS_DIR/%C
+  ControlMaster auto
+  ControlPersist 10m
+
+Host nodes1
+  HostName SERVER_1_IP
+
+Host nodes2
+  HostName SERVER_2_IP
